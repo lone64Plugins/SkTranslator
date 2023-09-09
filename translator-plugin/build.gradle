@@ -1,0 +1,30 @@
+plugins {
+    id "java"
+    id "java-library"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
+
+shadowJar {
+    archiveBaseName.set('SkTranslator')
+    archiveClassifier.set('')
+    archiveVersion.set('')
+}
+
+jar {
+    finalizedBy shadowJar
+}
+
+group = "org.lone64.sktranslator"
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:R0.1:1.12.2"
+    compileOnly "com.github.SkriptLang:Skript:2.7.0-beta3"
+    compileOnly "org.eclipse.jdt:org.eclipse.jdt.annotation:2.2.600"
+
+    implementation project(":translator-api")
+    implementation "org.lone64:api-mclib:compiled:1.0.0a"
+}
