@@ -1,0 +1,10 @@
+plugins {
+    id "java"
+}
+
+group = "org.lone64.sktranslator.support.version.v1_19_R3"
+
+dependencies {
+    compileOnly "org.spigotmc:spigot:R0.1:1.19.4"
+    compileOnly "org.spigotmc:spigot-api:R0.1:1.19.4"
+}
